@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="programs_details.css">
+    <title>Klali</title>
+  </head>
+  <body>
+    
+    <!-- Timer div placed here -->
+    <div id="timer" class="timer">
+      <span id="time-display" class="time-display">00:00:00:000</span>
+      <div id="progressbar" class="progressbar">
+          <div class="progress"></div>
+      </div>
+      <button id="start" class="timer-button">Start</button>
+      <button id="stop" class="timer-button">Stop</button>
+      <button id="reset" class="timer-button">Reset</button>
+
+  </div>
+
+    <!-- Timer div ends -->
+    <div class="main-container" id="mainContainer">
+      <!-- JavaScript will generate the figures here -->
+    </div>
+
+    <script>
+      const exercisesData = [
+        { img: 'img/Klali/T1.png', name: 'Exercise 1', repetitions: '3 x 10' },
+        { img: 'img/Klali/T2.png', name: 'Exercise 2', repetitions: '3 x 10' },
+        { img: 'img/Klali/T3.jpg', name: 'Exercise 3', repetitions: '3 x 10' },
+        { img: 'img/Klali/T4.png', name: 'Exercise 4', repetitions: '3 x 10' },
+        { img: 'img/Klali/T5.jpeg', name: 'Exercise 5', repetitions: '3 x 10' },
+        { img: 'img/Klali/T6.jpeg', name: 'Exercise 6', repetitions: '3 x 10' },
+        { img: 'img/Klali/T7.png', name: 'Exercise 7', repetitions: '3 x 10' },
+        { img: 'img/Klali/T8.jpg', name: 'Exercise 8', repetitions: '3 x 10' },
+        { img: 'img/Klali/T9.png', name: 'Exercise 9', repetitions: '3 x 10' },
+        { img: 'img/Klali/T10.jpg', name: 'Exercise 10', repetitions: '3 x 10' },
+        { img: 'img/Klali/T11.jpeg', name: 'Exercise 11', repetitions: '3 x 10' },
+        { img: 'img/Klali/T12.png', name: 'Exercise 12', repetitions: '3 x 10' },
+      ];
+
+      const container = document.getElementById('mainContainer');
+
+      exercisesData.forEach((exercise, index) => {
+        const figure = document.createElement('figure');
+
+        const img = document.createElement('img');
+        img.src = exercise.img;
+        img.alt = `image${index + 1}`;
+
+        const figcaption1 = document.createElement('figcaption');
+        figcaption1.textContent = exercise.name;
+
+        const figcaption2 = document.createElement('figcaption');
+        figcaption2.textContent = exercise.repetitions;
+
+        figure.appendChild(img);
+        figure.appendChild(figcaption1);
+        figure.appendChild(figcaption2);
+
+        container.appendChild(figure);
+      });
+    </script>
+    <script src="timer.js"></script>
+  </body>
+</html>

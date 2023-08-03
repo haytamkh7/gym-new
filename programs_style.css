@@ -1,0 +1,71 @@
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+    --a: rgba(59, 209, 94, 0.974);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--black);
+    font-family: var(--sans); 
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    padding: 2em;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    padding: 3px;
+    transition: transform .5s, opacity 0.5s;
+}
+
+.container img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+figure figcaption {
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+    .container img {
+        border-radius: 15px;
+    }
+}
